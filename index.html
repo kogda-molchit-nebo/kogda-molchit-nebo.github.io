@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151311" />
+    <meta
+      name="description"
+      content="Музыкальный альбом по миру романа «Когда молчит Небо»: 14 композиций и графитовые Снимки вечности."
+    />
+    <title>Когда молчит Небо — музыкальный альбом</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151311'/%3E%3Cpath d='M13 36c7-15 12 15 19 0s12 15 19 0' fill='none' stroke='%23b44f43' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="wordmark" href="#player" aria-label="К началу альбома">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>КОГДА МОЛЧИТ НЕБО</span>
+      </a>
+      <p>Музыкальный альбом · Том I</p>
+    </header>
+
+    <main>
+      <section class="album" id="player" aria-labelledby="album-title">
+        <div class="artwork-wrap">
+          <div class="artwork-frame">
+            <img
+              id="activeCover"
+              src="./assets/covers/01.webp"
+              alt="Снимок вечности к композиции «Дом в движении»"
+              width="900"
+              height="900"
+            />
+            <span class="artwork-number" id="activeNumber">01</span>
+          </div>
+          <p class="snapshot-label">Снимок вечности</p>
+        </div>
+
+        <div class="player-panel">
+          <p class="eyebrow" id="activeAct">I · Дом и первая утрата</p>
+          <h1 id="album-title">Когда молчит Небо</h1>
+          <div class="track-heading">
+            <p class="track-kicker">Сейчас выбрано</p>
+            <h2 id="activeTitle">Дом в движении</h2>
+          </div>
+          <p class="scene" id="activeScene">
+            На Сия поправляет рубаху восьмилетнего Влада; рядом остаются тихие следы его механизма.
+          </p>
+
+          <div class="transport" aria-label="Управление воспроизведением">
+            <button class="icon-button" id="prevButton" type="button" aria-label="Предыдущая композиция">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M19 6l-9 6 9 6V6Z" /></svg>
+            </button>
+            <button class="play-button" id="playButton" type="button" aria-label="Воспроизвести">
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" /></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM14 5h4v14h-4z" /></svg>
+            </button>
+            <button class="icon-button" id="nextButton" type="button" aria-label="Следующая композиция">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M5 6l9 6-9 6V6Z" /></svg>
+            </button>
+          </div>
+
+          <div class="timeline">
+            <span id="currentTime">0:00</span>
+            <input id="progress" type="range" min="0" max="1000" value="0" aria-label="Позиция в композиции" />
+            <span id="duration">0:00</span>
+          </div>
+
+          <div class="player-footer">
+            <div class="volume-control">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 0a4.5 4.5 0 0 1 0 6M19 6a8 8 0 0 1 0 12" /></svg>
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="0.82" aria-label="Громкость" />
+            </div>
+            <p><span id="trackPosition">1</span> / 14</p>
+          </div>
+
+          <audio id="audio" preload="metadata"></audio>
+        </div>
+      </section>
+
+      <section class="track-section" aria-labelledby="track-list-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Полная история</p>
+            <h2 id="track-list-title">Все композиции</h2>
+          </div>
+          <p>Четырнадцать мгновений — от дома и первой утраты до решения остановиться и позвать мастера.</p>
+        </div>
+        <ol class="track-grid" id="trackGrid"></ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>«Когда молчит Небо»</p>
+      <p>Мир и текст — Чжань Вэймо <span lang="zh">詹微墨</span></p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
